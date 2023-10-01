@@ -22,7 +22,7 @@ sha256sums_x86_64=("SKIP"
 
 pkgver() {
   # export GITHUB_TOKEN=your-personal-github-token before running this update
- curl --url 'https://api.github.com/repos/logseq/logseq/releases' --request GET "Authorization: Bearer ${GITHUB_TOKEN}" | rg nightly | rg AppImage | rg name | grep -o '[-0-9a-zA-Z%.+]*' | sed 's/.*-x64-//' | rg nightly | sed 's/\.AppImage.*//' | sed 's/-alpha+nightly./r/g'
+ curl --url 'https://api.github.com/repos/logseq/logseq/releases' --request GET -H "Authorization: Bearer ${GITHUB_TOKEN}" | rg nightly | rg AppImage | rg name | grep -o '[-0-9a-zA-Z%.+]*' | sed 's/.*-x64-//' | rg nightly | sed 's/\.AppImage.*//' | sed 's/-alpha+nightly./r/g'
 }
 
 
