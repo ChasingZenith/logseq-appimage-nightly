@@ -2,7 +2,7 @@
 
 _pkgname=Logseq
 pkgname=logseq-desktop-appimage-nightly
-pkgver=0.9.18r20230928
+pkgver=0.9.18r20231006
 pkgrel=1
 pkgdesc="Description of my project"
 arch=('x86_64')
@@ -12,7 +12,7 @@ provides=("logseq-desktop")
 conflicts=("logseq-desktop")
 depends=()
 options=(!strip)
-_appimage="${_pkgname}-${pkgver/_/-alpha+nightly.}.AppImage"
+_appimage="${_pkgname}-${pkgver/r/-alpha+nightly.}.AppImage"
 source_x86_64=("${_appimage}::https://github.com/logseq/logseq/releases/download/nightly/Logseq-linux-x64-${pkgver/r/-alpha+nightly.}.AppImage"
                "https://github.com/logseq/logseq/raw/nightly/LICENSE.md"
               )
