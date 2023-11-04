@@ -1,0 +1,7 @@
+LICENSE.md
+logseq-desktop-appimage-nightly-*.pkg.tar.zst
+pkg/
+PKGBUILD
+src/
+Logseq-linux-x64-0.*-alpha+nightly.*.AppImage
+
