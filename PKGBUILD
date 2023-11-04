@@ -46,7 +46,14 @@ package() {
     install -Dm644 "${srcdir}/squashfs-root/Logseq.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
 
     # Icon images
-    install -Dm644 "${srcdir}/squashfs-root/resources/app/icons/logseq.png" -t "${pkgdir}/usr/share/pixmaps/"
+    # install -Dm644 "${srcdir}/squashfs-root/resources/app/icons/logseq.png" -t "${pkgdir}/usr/share/pixmaps/"
+    install -Dm644 "${srcdir}/squashfs-root/resources/app/ios/icon/icon-20.png"   "${pkgdir}/usr/share/icons/hicolor/20x20/apps/Logseq.png"
+    install -Dm644 "${srcdir}/squashfs-root/resources/app/android/icon/drawable-mdpi-icon.png"    "${pkgdir}/usr/share/icons/hicolor/48x48/apps/Logseq.png"
+    install -Dm644 "${srcdir}/squashfs-root/resources/app/android/icon/drawable-hdpi-icon.png"    "${pkgdir}/usr/share/icons/hicolor/72x72/apps/Logseq.png"
+    install -Dm644 "${srcdir}/squashfs-root/resources/app/android/icon/drawable-ldpi-icon.png"   "${pkgdir}/usr/share/icons/hicolor/36x36/apps/Logseq.png"
+    install -Dm644 "${srcdir}/squashfs-root/resources/app/android/icon/drawable-xhdpi-icon.png"   "${pkgdir}/usr/share/icons/hicolor/96x96/apps/Logseq.png"
+    install -Dm644 "${srcdir}/squashfs-root/resources/app/android/icon/drawable-xxxhdpi-icon.png"    "${pkgdir}/usr/share/icons/hicolor/192x192/apps/Logseq.png"
+    install -Dm644 "${srcdir}/squashfs-root/resources/app/icons/logseq.png"  "${pkgdir}/usr/share/icons/hicolor/512x512/apps/Logseq.png"
 
     # Symlink executable
     install -dm755 "${pkgdir}/usr/bin"
