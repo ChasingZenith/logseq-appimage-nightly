@@ -1,8 +1,8 @@
-# Maintainer: My name <myemail at domain dot me>
+# Maintainer: <tangsquirrel@gmail.com>
 
 _pkgname=Logseq
 pkgname=logseq-desktop-appimage-nightly
-pkgver=0.9.18r20231006
+pkgver=0.9.20r20231102
 pkgrel=1
 pkgdesc="Description of my project"
 arch=('x86_64')
@@ -10,9 +10,9 @@ url="https://github.com/logseq/logseq/"
 license=('AGPL3')
 provides=("logseq-desktop")
 conflicts=("logseq-desktop")
-depends=()
+depends=(fuse2)
 options=(!strip)
-_appimage="${_pkgname}-${pkgver/r/-alpha+nightly.}.AppImage"
+_appimage="${_pkgname}-linux-x64-${pkgver/r/-alpha+nightly.}.AppImage"
 source_x86_64=("${_appimage}::https://github.com/logseq/logseq/releases/download/nightly/Logseq-linux-x64-${pkgver/r/-alpha+nightly.}.AppImage"
                "https://github.com/logseq/logseq/raw/nightly/LICENSE.md"
               )
@@ -22,7 +22,7 @@ sha256sums_x86_64=("SKIP"
 
 pkgver() {
   # export GITHUB_TOKEN=your-personal-github-token before running this update
- curl --url 'https://api.github.com/repos/logseq/logseq/releases' --request GET -H "Authorization: Bearer ${GITHUB_TOKEN}" | rg nightly | rg AppImage | rg name | grep -o '[-0-9a-zA-Z%.+]*' | sed 's/.*-x64-//' | rg nightly | sed 's/\.AppImage.*//' | sed 's/-alpha+nightly./r/g'
+ curl --url 'https://api.github.com/repos/logseq/logseq/releases' --request GET -H "Authorization: Bearer ${GITHUB_TOKEN}" | grep nightly | grep AppImage | grep name | grep -o '[-0-9a-zA-Z%.+]*' | sed 's/.*-x64-//' | grep nightly | sed 's/\.AppImage.*//' | sed 's/-alpha+nightly./r/g'
 }
 
 
